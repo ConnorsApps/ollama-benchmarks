@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ollama-benchmarks
+  namespace: ollama
+spec:
+  template:
+    spec:
+      containers:
+      - name: ollama-benchmarks
+        image: registry.connorskees.com/lib/ollama-benchmarks:latest
+        imagePullPolicy: Always
+        command: ["/app/main"]
+        envFrom:
+        - secretRef:
+            name: job-env
+      restartPolicy: Never
+      volumes:
+      - name: env
+        secret:
+          secretName: job-env
+
+# k create secret generic job-env -n ollama --from-env-file .env

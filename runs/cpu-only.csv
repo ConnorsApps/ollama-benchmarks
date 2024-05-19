@@ -1,0 +1,5 @@
+model,param_count,storage,initial_load_duration,avg_duration,max_duration,min_duration,total_test_time
+codellama:7b,7B,3.8GB,1024,86569,194591,3380,1043247
+llama2-uncensored:7b,7B,3.8GB,3760,41427,137581,2769,508262
+llama3:latest,8B,4.7GB,8189,115669,225864,4139,1407603
+tinyllama:latest,1.1B,640MB,1843,16751,38918,1369,219878
